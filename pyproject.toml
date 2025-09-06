@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openscanlate"
+version = "0.1.0"
+description = "Open-source manga page translation pipeline (Phase 1 CLI)"
+authors = [{ name = "Abdullah" }]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "Pillow>=10.3.0",
+  "opencv-python>=4.9.0.80",
+  "numpy>=1.26.4",
+  "easyocr>=1.7.1",
+  "ollama>=0.5.0",
+  "typer[all]>=0.12.3",
+  "rich>=13.7.1",
+]
+
+[project.optional-dependencies]
+extras = [
+  "manga-ocr>=0.1.13",
+]
+
+[project.scripts]
+openscanlate = "openscanlate.cli:app"
